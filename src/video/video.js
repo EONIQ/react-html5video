@@ -56,7 +56,8 @@ export default (
             TRACKEVENTS.forEach(event => {
                 // TODO: JSDom does not have this method on
                 // `textTracks`. Investigate so we can test this without this check.
-                this.videoEl.textTracks.addEventListener
+                this.videoEl.textTracks
+                && this.videoEl.textTracks.addEventListener
                 && this.videoEl.textTracks.addEventListener(event.toLowerCase(), this.updateState);
             });
 
@@ -80,7 +81,8 @@ export default (
             TRACKEVENTS.forEach(event => {
                 // TODO: JSDom does not have this method on
                 // `textTracks`. Investigate so we can test this without this check.
-                this.videoEl.textTracks.removeEventListener
+                this.videoEl.textTracks
+                && this.videoEl.textTracks.removeEventListener
                 && this.videoEl.textTracks.removeEventListener(event.toLowerCase(), this.updateState);
             });
 
